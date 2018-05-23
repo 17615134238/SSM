@@ -1,0 +1,32 @@
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    overflow: hidden;
+    padding: 0px 380px;
+}
+footer .footer01{
+    float: left;
+    margin: 10px 30px;
+}
+footer .footer03{
+    float: left;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+footer .footer01 img{
+    margin-left: 120px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+footer .footer01 .footer04{
+    margin-left: 25px;
+}
+footer .footer01 .footer04 span{
+    display: inline-block;
+    padding: 0px 10px;
+}
+footer .footer01 .footer04 .footer02{
+    border-left: 2px solid #333;
+    border-right:2px solid #333;
+}

@@ -1,0 +1,287 @@
+
+@media (max-width:768px) {
+    *{
+        padding: 0px;
+        margin: 0px;
+        font-family: "Microsoft YaHei";
+        color:inherit;
+    }
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+    header{
+        width: 100%;
+        height: 40px;
+    }
+    header .row img{
+        width: 140px;
+        height: 25px;
+        margin: 5px 0px;
+    }
+    header .col-md-5{
+        padding-left: 10px;
+        height:40px;
+    }
+    header .row .col-md-3 .wenben{
+        line-height: 40px;
+        font-weight: bold;
+        color: #000;
+        font-size: 12px;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        text-align: right;
+    }
+    header .t{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        font-size: 12px;
+        text-align: right;
+        line-height: 20px;
+    }
+    header .right{
+        width: 125px;
+        height: 40px;
+    }
+    nav{
+        background-color: cornflowerblue;
+        width: 100%;
+        height: 50px;
+        position: relative;
+    }
+    nav a{
+        color: white;
+        line-height: 50px;
+        font-size:14px ;
+        display: inline-block;
+        width: 100%;
+        text-align: right;
+
+    }
+    nav span{
+        color: yellow;
+        line-height: 50px;
+        font-size: 15px;
+    }
+    nav .row a:hover{
+        background-color: #337ab7;
+        color: white;
+        text-decoration: none;
+        text-shadow: 2px 2px 2px black;
+
+    }
+    nav .row .shangjia a{
+
+    }
+    nav .row .shangjia a span{
+        color: white;
+        line-height: 50px;
+        font-size:14px;
+
+    }
+    nav .row .shangjia a #up1{
+        display: none;
+    }
+/*    nav .row .shangjia a:hover{
+        padding: 10px 30px;
+        background-color: #337ab7;
+        color: white;
+        text-decoration: none;
+        text-shadow: 2px 2px 2px black;
+
+    }*/
+    nav .show2{
+        background-color: white;
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 50px;
+        left: 0px;
+        z-index: 10;
+        display: none;
+    }
+
+    .show2 a{
+        color: #000;
+        display: inline;
+    }
+    .show2 img{
+        width: 70px;
+        height: 70px;
+    }
+    .show2 .left{
+        float: left;
+        border-right: 1px solid black;
+        width: 50%;
+    }
+    .show2 .left a:hover{
+        font-size: 16px;
+        text-decoration: none;
+    }
+    .show2 .right{
+        float:right;
+        width: 160px;
+    }
+    .show2 .right a:hover{
+        font-size: 16px;
+        text-decoration: none;
+    }
+    .md{
+        width: 100%;
+    }
+    .md .carousel-inner img{
+        width: 100%;
+        height: 260px;
+    }
+
+    footer{
+        width: 100%;
+        /*height: 100px;*/
+        background-color: black;
+        overflow: hidden;
+        /*padding: 0px 380px;*/
+    }
+    footer .footer01{
+        float: left;
+        width: 202px;
+        padding: 10px;
+    }
+    footer .footer03{
+        float: left;
+        width: 172px;
+        padding: 10px;
+
+    }
+    footer .footer03 img{
+        margin:0px auto;
+    }
+    footer .footer03 p{
+        margin: 10px 27px;
+    }
+    footer .footer01 img{
+        margin:10px auto;
+        /*margin-bottom: 10px;*/
+        /*margin-top: 20px;*/
+    }
+    footer .footer01 .footer04{
+        /*margin-left: 25px;*/
+    }
+    footer .footer01 .footer04 span{
+        display: inline-block;
+        /*padding: 0px 10px;*/
+    }
+    footer .footer01 .footer04 .footer02{
+        border-left: 2px solid #333;
+        border-right:2px solid #333;
+    }
+
+}
+@media (min-width:992px) {
+    *{
+        padding: 0px;
+        margin: 0px;
+        font-family: "Microsoft YaHei";
+        color:inherit;
+    }
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+
+    nav{
+        background-color: cornflowerblue;
+        width: 100%;
+        height: 50px;
+        position: relative;
+    }
+    nav a{
+        color: white;
+        line-height: 50px;
+        font-size:16px ;
+        padding: 10px 10px;
+    }
+    nav .row .col-md-offset-5{
+        padding-left: 100px;
+    }
+    nav span{
+        color: yellow;
+        line-height: 50px;
+        font-size: 15px;
+    }
+    nav .row a:hover{
+        padding: 10px 10px;
+        background-color: #337ab7;
+        color: white;
+        text-decoration: none;
+        text-shadow: 2px 2px 2px black;
+
+    }
+    nav .row .shangjia a{
+        padding: 0px 30px;
+    }
+    nav .row .shangjia a span{
+        margin: 10px;
+        color: white;
+        line-height: 50px;
+        font-size:16px ;
+
+    }
+    nav .row .shangjia a #up1{
+        display: none;
+    }
+    nav .row .shangjia a:hover{
+        padding: 10px 30px;
+        background-color: #337ab7;
+        color: white;
+        text-decoration: none;
+        text-shadow: 2px 2px 2px black;
+
+    }
+    nav .show2{
+        background-color: white;
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 50px;
+        left: 0px;
+        z-index: 10;
+        padding: 10px 400px;
+        display: none;
+    }
+
+    .show2 a{
+        color: #000;
+    }
+    .show2 img{
+        width: 70px;
+        height: 70px;
+    }
+    .show2 .left{
+        float: left;
+        border-right: 1px solid black;
+        width: 248px;
+    }
+    .show2 .left a:hover{
+        font-size: 18px;
+        text-decoration: none;
+    }
+    .show2 .right{
+        float:right;
+        width: 160px;
+    }
+    .show2 .right a:hover{
+        font-size: 18px;
+        text-decoration: none;
+    }
+    .md{
+        width: 100%;
+    }
+    .md .carousel-inner img{
+        width: 100%;
+        height: 400px;
+    }
+
+}
+

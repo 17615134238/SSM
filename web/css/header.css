@@ -1,0 +1,26 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: "Microsoft YaHei";
+    color:inherit;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+header .row img{
+    width: 330px;
+    height: 50px;
+}
+header .col-md-5{
+    padding-left: 90px;
+}
+header .row .col-md-3 .wenben{
+    line-height: 50px;
+    font-weight: bold;
+    color: #000;
+    font-size: 20px;
+}
+header .t{
+    line-height: 50px;
+}

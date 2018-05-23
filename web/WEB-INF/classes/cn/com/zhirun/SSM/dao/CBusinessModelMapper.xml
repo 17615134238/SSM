@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.zhirun.SSM.dao.CBusinessModelMapper">
+    <select id="checkBnsByName" parameterType="BusinessModel" resultType="java.lang.Integer">
+    select count(bns_name)  from t_business where bns_name = #{bnsName} limit 1
+  </select>
+
+    <!--返回值要与Business类里的属性一致-->
+    <select id="selectBns" parameterType="Pages" resultType="BusinessModel">
+        select bns_id bnsId, bns_name bnsName, bns_tel bnsTel, bns_group bnsGroup, bns_area bnsArea, bns_addr bnsAddr,
+        bns_money bnsMoney from t_business
+        <where>
+            and bns_deleflg = 0
+            <if test="businessModel.bnsId!=null and businessModel.bnsId!=''">
+                and bns_id like "%"#{businessModel.bnsId}"%"
+            </if>
+            <if test="businessModel.bnsName!=null and businessModel.bnsName!=''">
+                and bns_name like "%"#{businessModel.bnsName}"%"
+            </if>
+            <if test="businessModel.bnsTel!=null and businessModel.bnsTel!=''">
+                and bns_tel = #{businessModel.bnsTel}
+            </if>
+            <if test="businessModel.bnsGroup!=null and businessModel.bnsGroup!=''">
+                and bns_group = #{businessModel.bnsGroup}
+            </if>
+            <if test="businessModel.bnsArea!=null and businessModel.bnsArea!=''">
+                and bns_area = #{businessModel.bnsArea}
+            </if>
+            <if test="businessModel.bnsAddr!=null and businessModel.bnsAddr!=''">
+                and bns_addr = #{businessModel.bnsAddr}
+            </if>
+            <if test="businessModel.bnsMoneyFrom!=null and businessModel.bnsMoneyFrom!=''">
+                and bns_money &gt;= #{businessModel.bnsMoneyFrom}
+            </if>
+            <if test="businessModel.bnsMoneyTo!=null and businessModel.bnsMoneyTo!=''">
+                and bns_money &lt;= #{businessModel.bnsMoneyTo}
+            </if>
+        </where>
+        <if test="num!=1">
+            limit #{start},#{businessModel.rowNum}
+        </if>
+    </select>
+
+    <update id="deleteBns" parameterType="BusinessModel">
+    update t_business set bns_deleflg = 1
+    where bns_id = #{bnsId,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.zhirun.SSM.dao.BusinessModelMapper">
+  <resultMap id="BaseResultMap" type="cn.com.zhirun.SSM.model.BusinessModel">
+    <id column="bns_id" jdbcType="VARCHAR" property="bnsId" />
+    <result column="bns_name" jdbcType="VARCHAR" property="bnsName" />
+    <result column="bns_tel" jdbcType="VARCHAR" property="bnsTel" />
+    <result column="bns_group" jdbcType="VARCHAR" property="bnsGroup" />
+    <result column="bns_area" jdbcType="VARCHAR" property="bnsArea" />
+    <result column="bns_addr" jdbcType="VARCHAR" property="bnsAddr" />
+    <result column="bns_money" jdbcType="DOUBLE" property="bnsMoney" />
+    <result column="bns_create_date" jdbcType="VARCHAR" property="bnsCreateDate" />
+    <result column="bns_update_date" jdbcType="VARCHAR" property="bnsUpdateDate" />
+    <result column="bns_deleflg" jdbcType="INTEGER" property="bnsDeleflg" />
+    <result column="bns_comment" jdbcType="VARCHAR" property="bnsComment" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_business
+    where bns_id = #{bnsId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.com.zhirun.SSM.model.BusinessModel">
+    insert into t_business (bns_id, bns_name, bns_tel, 
+      bns_group, bns_area, bns_addr, 
+      bns_money, bns_create_date, bns_update_date, 
+      bns_deleflg, bns_comment)
+    values (#{bnsId,jdbcType=VARCHAR}, #{bnsName,jdbcType=VARCHAR}, #{bnsTel,jdbcType=VARCHAR}, 
+      #{bnsGroup,jdbcType=VARCHAR}, #{bnsArea,jdbcType=VARCHAR}, #{bnsAddr,jdbcType=VARCHAR}, 
+      #{bnsMoney,jdbcType=DOUBLE}, #{bnsCreateDate,jdbcType=VARCHAR}, #{bnsUpdateDate,jdbcType=VARCHAR}, 
+      #{bnsDeleflg,jdbcType=INTEGER}, #{bnsComment,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.com.zhirun.SSM.model.BusinessModel">
+    update t_business
+    set bns_name = #{bnsName,jdbcType=VARCHAR},
+      bns_tel = #{bnsTel,jdbcType=VARCHAR},
+      bns_group = #{bnsGroup,jdbcType=VARCHAR},
+      bns_area = #{bnsArea,jdbcType=VARCHAR},
+      bns_addr = #{bnsAddr,jdbcType=VARCHAR},
+      bns_money = #{bnsMoney,jdbcType=DOUBLE},
+      bns_update_date = #{bnsUpdateDate,jdbcType=VARCHAR}
+    where bns_id = #{bnsId,jdbcType=VARCHAR}
+    and (bns_name!=#{bnsName,jdbcType=VARCHAR}
+     or bns_tel!=#{bnsTel,jdbcType=VARCHAR}
+     or bns_group!=#{bnsGroup,jdbcType=VARCHAR}
+     or bns_area!=#{bnsArea,jdbcType=VARCHAR}
+     or bns_addr!=#{bnsAddr,jdbcType=VARCHAR}
+     or bns_money!=#{bnsMoney,jdbcType=DOUBLE})
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select bns_name, bns_tel, bns_group, bns_area, bns_addr, bns_money, bns_create_date,
+    bns_update_date, bns_deleflg, bns_comment
+    from t_business
+    where bns_id = #{bnsId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select bns_id, bns_name, bns_tel, bns_group, bns_area, bns_addr, bns_money, bns_create_date, 
+    bns_update_date, bns_deleflg, bns_comment
+    from t_business
+  </select>
+
+  <!--返回值要与Business类里的属性一致-->
+  <!--<select id="selectBns" parameterType="Pages" resultMap="BaseResultMap">-->
+    <!--select bns_id, bns_name, bns_tel, bns_group, bns_area, bns_addr, bns_money from t_business-->
+    <!--<where>-->
+      <!--<if test="businessModel.bnsId!=null and businessModel.bnsId!=''">-->
+        <!--and bns_id like "%"#{businessModel.bnsId}"%"-->
+      <!--</if>-->
+      <!--<if test="businessModel.bnsName!=null and businessModel.bnsName!=''">-->
+        <!--and bns_name like "%"#{businessModel.bnsName}"%"-->
+      <!--</if>-->
+      <!--<if test="businessModel.bnsTel!=null and businessModel.bnsTel!=''">-->
+        <!--and bns_tel = #{businessModel.bnsTel}-->
+      <!--</if>-->
+      <!--<if test="businessModel.bnsGroup!=null and businessModel.bnsGroup!=''">-->
+        <!--and bns_group = #{businessModel.bnsGroup}-->
+      <!--</if>-->
+      <!--<if test="businessModel.bnsArea!=null and businessModel.bnsArea!=''">-->
+        <!--and bns_area = #{businessModel.bnsArea}-->
+      <!--</if>-->
+      <!--<if test="businessModel.bnsAddr!=null and businessModel.bnsAddr!=''">-->
+        <!--and bns_addr = #{businessModel.bnsAddr}-->
+      <!--</if>-->
+      <!--<if test="businessModel.bnsMoneyForm!=null and businessModel.bnsMoneyForm!=''">-->
+        <!--and bns_money $ge; #{businessModel.bnsMoneyForm}-->
+      <!--</if>-->
+      <!--<if test="businessModel.bnsMoneyTo!=null and businessModel.bnsMoneyTo!=''">-->
+        <!--and bns_money $le; #{businessModel.bnsMoneyTo}-->
+      <!--</if>-->
+    <!--</where>-->
+    <!--<if test="num==null">-->
+      <!--limit #{start},#{businessModel.rowNum}-->
+    <!--</if>-->
+  <!--</select>-->
+
+</mapper>
